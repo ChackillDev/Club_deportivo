@@ -1,6 +1,7 @@
 import express from 'express';
 import chalk from 'chalk';
 import mainRouter from './src/routes/main.router.js';
+import crudDeporte from './src/routes/crudDeportes.router.js';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
 
@@ -13,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 // Middlewares rutas
 
-app.use(mainRouter);
+app.use(mainRouter, crudDeporte);
 app.use(express.static(path.join(__dirname,'src/wiews/public')));
 
 

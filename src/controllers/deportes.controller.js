@@ -6,16 +6,16 @@ const __dirname = path.dirname(__filename);
 
 const dataDeportes = path.resolve(__dirname, '../wiews/private/deportes.json')
 
-// export const leerDatos= ()=>{
-//     try {
-//         const data = fs.readFileSync(dataDeportes, 'utf8');
-//         const respuesta = JSON.parse(data);
-//         return respuesta;
-//     } catch (err) {
-//         console.error('Error leyendo los datos:', err);
-//         return [];
-//     }
-// }
+export const leerDatos= (req,res)=>{
+    try {
+        const data = fs.readFileSync(dataDeportes, 'utf8');
+        const respuesta = JSON.parse(data);
+        return res.json(respuesta);
+    } catch (err) {
+        console.error('Error leyendo los datos:', err);
+        return [];
+    }
+}
 
 // const escribirDatos = (data)=> {
 //     try {
