@@ -1,5 +1,5 @@
 import express from 'express';
-import chalk from 'chalk'
+import chalk from 'chalk';
 import mainRouter from './src/routes/main.router.js';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
