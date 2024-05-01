@@ -1,0 +1,16 @@
+{
+  "name": "prueba_club_deportivo",
+  "version": "1.0.0",
+  "description": "CRUD - Con Express.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file=.env index.js"
+  },
+  "keywords": [],
+  "author": "Christian Chacon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
