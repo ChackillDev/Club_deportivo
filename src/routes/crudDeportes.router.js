@@ -1,8 +1,9 @@
 import Router from 'express'
 const crudDeporte = Router();
-import { leerDatos } from '../controllers/deportes.controller.js';
+import { leerDatos, agregarDatos } from '../controllers/deportes.controller.js';
 
-crudDeporte.get('/leer', leerDatos)
+crudDeporte.post('/agregar', agregarDatos)
+
 
 
 export default crudDeporte;

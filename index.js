@@ -13,7 +13,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middlewares rutas
-
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 app.use(mainRouter, crudDeporte);
 app.use(express.static(path.join(__dirname,'src/wiews/public')));
 

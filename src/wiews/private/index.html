@@ -17,30 +17,18 @@
 
 <section class="container mb-5">
 
-  <form action="#" method="post">
+<form action="/agregar" method="post">
     <div class="mb-3">
-      <label for="nombreDeporte" class="form-label text-bg-dark p-3 fs-3">Nombre Deporte</label>
-      <input type="text" class="form-control form-control-lg" id="nombreDeporte"
-        placeholder="Nombre deporte a ingresar">
+      <label for="nombre" class="form-label text-bg-dark p-3 fs-3">Nombre Deporte</label>
+      <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" placeholder="Nombre deporte a ingresar">
     </div>
     <label for="precio" class="form-label text-bg-dark p-3 fs-3">Precio</label>
     <div class="input-group mb-5">
       <span class="input-group-text">$</span>
-      <input type="text" class="form-control form-control-lg" id="precio" placeholder="precio a ingresar">
+      <input type="text" class="form-control form-control-lg" id="precio" name="precio" placeholder="precio a ingresar">
     </div>
-    <button type="button" class="btn btn-outline-info p-3">Agregar</button>
-  </form>
-</section>
-
-<section class="container respuestas">
-  <div class="mx-auto p-2" style="width: 500px;">
-  <div class="hstack gap-3">
-  <p class="text-bg-dark">#respuestas deportes#</p>
-  <button type="button" class="btn btn-outline-warning p-3">Editar</button>
-  <div class="vr bg-white"></div>
-  <button type="button" class="btn btn-outline-danger p-3">Eliminar</button>
-</div>
-</div>
+    <button type="submit" class="btn btn-outline-info p-3">Agregar</button>
+</form>
 </section>
 
 </body>
