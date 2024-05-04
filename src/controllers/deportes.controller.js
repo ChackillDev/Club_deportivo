@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const dataDeportes = path.resolve(__dirname, './deportes.json')
-const respuestaHtml = path.resolve(__dirname, '../wiews/private/respuestas.html')
+
 
 export const leerDatos = () => {
   try {
@@ -18,8 +18,9 @@ export const leerDatos = () => {
   }
 }
 
-export const escribirDatos = (data) => {
+const escribirDatos = (data) => {
   try {
+
     fs.writeFileSync(dataDeportes,JSON.stringify(data));
 
   } catch (err) {
@@ -28,22 +29,10 @@ export const escribirDatos = (data) => {
   }
 };
 
-
-export const pintarDatos = (req, res) => {
-
-  const nombre = req.body.nombre;
-  const precio = req.body.precio;
-
-  let reshtml = false;
-  try {
-
-    reshtml = fs.readFileSync(respuestaHtml, 'utf8', 'r')
-    reshtml = reshtml.replace("%nombre%", nombre)
-    reshtml = reshtml.replace("%precio%", precio)
-
-    res.send(reshtml);
-
-  } catch (error) {
-    res.status(404).send('archivo no encontrado' + error)
-  }
-};
+export const nuevoDato = (req, res) => {
+  const datosOld=leerDatos();
+  const body=req.body;
+  const datosAct=datosOld.deportes.push(body);
+  escribirDatos(datosAct);
+  res.json(body)
+}
