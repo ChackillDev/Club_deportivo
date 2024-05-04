@@ -1,4 +1,14 @@
 {
-    "nombre":"Futbol",
+  "deportes":[
+  {
+    "id":1,
+    "nombre":"Ascenso Vertical",
     "precio":5000
+  },
+  {
+    "id":2,
+    "nombre":"badmington",
+    "precio":15000
+  }
+  ]
 }
