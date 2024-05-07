@@ -45,3 +45,26 @@ export const nuevoDato = (req, res) => {
   escribirDatos(datos);
   res.json(nuevoDeporte);
 }
+
+export const actualizarDato = (req, res) => {
+  const datos = leerDatos();
+  const body = req.body;
+  const id = parseInt(req.params.id);
+  const deporIndex = datos.deportes.findIndex((depor)=> depor.id === id);
+  console.log(deporIndex);
+  datos.deportes[deporIndex]={
+    ...datos.deportes[deporIndex],
+    ...body,
+  };
+  escribirDatos(datos);
+  res.json({message:"Ha sido actualizado satisfactoriamente"});
+}
+export const eliminarDato = (req, res) => {
+  const datos = leerDatos();
+  const id = parseInt(req.params.id);
+  console.log(id);
+  const deporIndex = datos.deportes.findIndex((depor)=> depor.id === id);
+  datos.deportes.splice(deporIndex,1)
+  escribirDatos(datos);
+  res.json({message:"Ha sido eliminado satisfactoriamente"});
+}

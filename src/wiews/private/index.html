@@ -12,8 +12,15 @@
 </head>
 
 <body class="bg-dark">
+
+
   <h1 class="text-bg-success p-3">Deportes</h1>
 
+  <nav class="my-3 fs-3">
+    <a href="http://localhost:3000/leer">listado de deportes</a>
+  </nav>
+
+  <p class="text-bg-dark">escribir id a eliminar "http://localhost:3000/eliminarDato/id"</p>
 
 <section class="container mb-5">
 
@@ -29,6 +36,26 @@
     </div>
     <button type="submit" class="btn btn-outline-info p-3">Agregar</button>
 </form>
+
+</section>
+
+<section>
+  <form action="/actualizar" method="put">
+  <div class="mb-3" >
+
+    <label for="idLista" class="form-label text-bg-dark p-3 fs-3">ID Deporte</label>
+    <input type="text" class="form-control form-control-lg" id="idLista" name="idLista" placeholder="ID a modificar, revisar en listado">
+    <label for="nombre" class="form-label text-bg-dark p-3 fs-3">Nombre Deporte</label>
+    <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" placeholder="Nombre deporte a ingresar">
+  </div>
+  <label for="precio" class="form-label text-bg-dark p-3 fs-3">Precio</label>
+  <div class="input-group mb-5">
+    <span class="input-group-text">$</span>
+    <input type="text" class="form-control form-control-lg" id="precio" name="precio" placeholder="precio a ingresar">
+  </div>
+  <button type="submit" class="btn btn-outline-info p-3">Modificar</button>
+</form>
+
 </section>
 
 </body>
